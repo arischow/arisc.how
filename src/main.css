@@ -1,0 +1,14 @@
+body {
+  max-width: 640px;
+  margin: auto;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu li {
+  display: inline-block;
+  margin: 0 10px 0 0;
+}
