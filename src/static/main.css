@@ -1,6 +1,7 @@
 body {
   max-width: 640px;
   margin: auto;
+  padding: 0 10px;
 }
 
 .menu ul {
