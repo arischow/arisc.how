@@ -2,7 +2,7 @@
 name = "jinja2"
 version = "3.1.2"
 description = "A very fast and expressive template engine."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -16,14 +16,14 @@ i18n = ["Babel (>=2.7)"]
 name = "markupsafe"
 version = "2.1.1"
 description = "Safely add untrusted strings to HTML/XML markup."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "578ad5d5695d222035a0b89d56c6c907b0448608390d126c4fabded0f213d47f"
+content-hash = "b1a0175fe915b4694320885f11bab7d425433a1416e22276715dcb84e3425b0e"
 
 [metadata.files]
 jinja2 = [
