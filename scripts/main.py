@@ -13,8 +13,8 @@ if __name__ == '__main__':
         Menu("about", "/about"),
     ]
     pages = [
-        Page(env, "index", "/", menus, title="Welcome!", content="It works."),
-        Page(env, "about", "/about", menus, title="About", content="Eh. To be filled in later."),
+        Page(env, menus, title="Welcome!", content_filename="index.md"),
+        Page(env, menus, title="About", content_filename="about.md"),
     ]
     site = Site(title="Aris Chow", pages=pages)
     site.write()
