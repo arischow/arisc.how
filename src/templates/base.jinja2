@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  {%- block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Aris Chow{% endblock %}</title>
+    <link rel="stylesheet" href="static/main.css">
+  {%- endblock %}
+</head>
+<body>
+{%- block header %}
+  <h1>Aris Chow</h1>
+  <div class="menu">
+    {%- block menu %}
+      <ul>
+        {% for m in menus %}
+        <li><a href="{{ m.link }}">{{ m.name }}</a></li>
+        {% endfor %}
+      </ul>
+    {%- endblock %}
+  </div>
+{%- endblock %}
+  <div id="content">
+    {%- block content %}
+    {% endblock -%}
+  </div>
+</body>
+</html>
