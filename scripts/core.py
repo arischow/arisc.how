@@ -1,5 +1,4 @@
-import os
-import pathlib
+from pathlib import Path
 
 import jinja2
 from markdown_it import MarkdownIt
@@ -27,8 +26,7 @@ class Page:
         self.dest_filename = dest_filename
         self.menus = menus
         self.content_filename = content_filename
-        with open(os.path.join(SRC_DIR, self.MARKDOWN_DIR, content_filename)) as f:
-            self.content = md.render(f.read())
+        self.content = md.render(Path.joinpath(SRC_DIR, self.MARKDOWN_DIR, self.content_filename).read_text())
 
     @property
     def data(self):
@@ -45,9 +43,8 @@ class Page:
             data = self.data
 
         template = self._env.get_template(self.TEMPLATE_FILENAME)
-        dest_filename = self.dest_filename or f"{pathlib.Path(self.content_filename).stem}.html"
-        with open(os.path.join(DIST_DIR, dest_filename), "w") as f:
-            f.write(template.render(data))
+        dest_filename = self.dest_filename or f"{Path(self.content_filename).stem}.html"
+        Path.joinpath(DIST_DIR, dest_filename).write_text(template.render(data))
 
 
 class Site:
