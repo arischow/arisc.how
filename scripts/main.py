@@ -15,4 +15,4 @@ if __name__ == "__main__":
     pages = Page.glob(env, menus)
     posts = Post.glob(env, menus)
     site = Site(title="Aris Chow", pages=pages, posts=posts)
-    site.write()
+    site.build()

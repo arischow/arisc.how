@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 import frontmatter
@@ -50,13 +51,13 @@ class Page:
             "front_matter": {**self.front_matter},
         }
 
-    def render(self, data=None):
+    def render(self, dest_dir, data=None):
         if not data:
             data = self.data
 
         template = self._env.get_template(self.TEMPLATE_FILENAME)
         dest_filename = self.dest_filename or f"{Path(self.content_filename).stem}.html"
-        Path.joinpath(DIST_DIR, dest_filename).write_text(template.render(data))
+        Path.joinpath(dest_dir, dest_filename).write_text(template.render(data))
 
 
 class Post(Page):
@@ -89,4 +90,20 @@ class Site:
 
     def write(self):
         for p in [*self.pages, *self.posts]:
-            p.render({**self.data, **p.data})
+            p.render(DIST_DIR, {**self.data, **p.data})
+
+    @staticmethod
+    def copy_static_files():
+        for p in Path(SRC_DIR).glob("static/*"):
+            Path.joinpath(DIST_DIR, "static", str(p)).write_bytes(p.read_bytes())
+
+    @staticmethod
+    def cleanup():
+        for p in Path(DIST_DIR).glob("*"):
+            if p.is_file():
+                os.remove(str(p))
+
+    def build(self):
+        self.cleanup()
+        self.copy_static_files()
+        self.write()
