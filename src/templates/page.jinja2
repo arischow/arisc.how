@@ -1,5 +1,5 @@
 {% extends "base.jinja2" %}
-{% block title %}{{ page.title }} | {{ site.title }}{% endblock %}
+{% block title %}{{ front_matter.title }} | {{ site.title }}{% endblock %}
 {% block content %}
   {{ page.content | safe }}
 {% endblock %}

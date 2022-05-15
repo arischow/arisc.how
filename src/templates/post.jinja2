@@ -1,0 +1,5 @@
+{% extends "page.jinja2" %}
+{% block content %}
+  {{ front_matter.created_at.strftime("%Y-%m-%d") }}
+  {{ page.content | safe }}
+{% endblock %}
