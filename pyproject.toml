@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "arisc.how"
+name = "gomashio"
 version = "0.1.0"
 description = ""
 authors = ["Aris Chow <arischow@gmail.com>"]
@@ -18,4 +18,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.isort]
 profile = "black"
-src_paths = ["gomashio"]
+src_paths = ["src/gomashio"]
+
+[tool.poetry.scripts]
+site_build = "gomashio.cli:build"

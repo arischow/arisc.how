@@ -3,8 +3,9 @@ from pathlib import Path
 
 import frontmatter
 import jinja2
-from config import DIST_DIR, SRC_DIR
 from markdown_it import MarkdownIt
+
+from .config import CONTENTS_DIR, DIST_DIR, FRONTEND_DIR
 
 md = MarkdownIt()
 
@@ -31,14 +32,14 @@ class Page:
         self.menus = menus
         self.content_filename = content_filename
         with open(
-            Path.joinpath(SRC_DIR, self.MARKDOWN_DIR, self.content_filename), "r"
+            Path.joinpath(CONTENTS_DIR, self.MARKDOWN_DIR, self.content_filename), "r"
         ) as f:
             self.front_matter, original_markdown = frontmatter.parse(f.read())
             self.content = md.render(original_markdown)
 
     @classmethod
     def glob(cls, env: "jinja2.Environment", menus: list[Menu]):
-        for filename in Path.joinpath(SRC_DIR, cls.MARKDOWN_DIR).glob("*.md"):
+        for filename in Path.joinpath(CONTENTS_DIR, cls.MARKDOWN_DIR).glob("*.md"):
             yield cls(env, menus, content_filename=str(filename))
 
     @property
@@ -94,8 +95,9 @@ class Site:
 
     @staticmethod
     def copy_static_files():
-        for p in Path(SRC_DIR).glob("static/*"):
-            Path.joinpath(DIST_DIR, "static", str(p)).write_bytes(p.read_bytes())
+        for p in Path(FRONTEND_DIR).glob("static/*"):
+            Path.joinpath(DIST_DIR, "static").mkdir(parents=True, exist_ok=True)
+            Path.joinpath(DIST_DIR, "static", p.name).write_bytes(p.read_bytes())
 
     @staticmethod
     def cleanup():

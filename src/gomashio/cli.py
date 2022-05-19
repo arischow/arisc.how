@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 import jinja2
-from config import TEMPLATE_DIR
-from core import Menu, Page, Post, Site
 
-if __name__ == "__main__":
+from .config import TEMPLATE_DIR
+from .core import Menu, Page, Post, Site
+
+
+def build():
     env = jinja2.Environment(
         loader=jinja2.FileSystemLoader(TEMPLATE_DIR), autoescape=True
     )
@@ -16,3 +18,7 @@ if __name__ == "__main__":
     posts = Post.glob(env, menus)
     site = Site(title="Aris Chow", pages=pages, posts=posts)
     site.build()
+
+
+if __name__ == "__main__":
+    build()
