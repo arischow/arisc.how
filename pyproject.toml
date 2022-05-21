@@ -21,4 +21,4 @@ profile = "black"
 src_paths = ["src/gomashio"]
 
 [tool.poetry.scripts]
-site_build = "gomashio.cli:build"
+build = "gomashio.cli:build"
