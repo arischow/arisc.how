@@ -7,12 +7,12 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}Aris Chow{% endblock %}</title>
-    <link rel="stylesheet" href="static/main.css">
+    <link rel="stylesheet" href="static/output.css">
   {%- endblock %}
 </head>
 <body>
 {%- block header %}
-  <h1>Aris Chow</h1>
+  <h1 class="text-3xl font-bold underlined">Aris Chow</h1>
   <div class="menu">
     {%- block menu %}
       <ul>
@@ -27,5 +27,10 @@
     {%- block content %}
     {% endblock -%}
   </div>
+<div class="grid grid-cols-4 gap-4 bg-amber-200">
+  <div>01</div>
+  <div>02</div>
+  <div>09</div>
+</div>
 </body>
 </html>

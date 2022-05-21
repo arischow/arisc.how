@@ -2,4 +2,4 @@ build:
 	poetry run build
 
 watch:
-	watchman-make -p 'frontend/**/*.jinja2' 'contents/**' 'Makefile*' -t build
+	watchman-make -p 'frontend/**/*.html' 'contents/**' 'Makefile*' -t build

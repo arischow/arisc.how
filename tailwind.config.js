@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./frontend/**/*.{jinja2,js}"],
+  content: ["./frontend/**/*.{html,js}"],
   theme: {
     extend: {},
   },

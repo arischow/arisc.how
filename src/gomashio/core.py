@@ -17,7 +17,7 @@ class Menu:
 
 
 class Page:
-    TEMPLATE_FILENAME = "page.jinja2"
+    TEMPLATE_FILENAME = "page.html"
     MARKDOWN_DIR = "pages"
 
     def __init__(
@@ -62,7 +62,7 @@ class Page:
 
 
 class Post(Page):
-    TEMPLATE_FILENAME = "post.jinja2"
+    TEMPLATE_FILENAME = "post.html"
     MARKDOWN_DIR = "posts"
 
     def __init__(

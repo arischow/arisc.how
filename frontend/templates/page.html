@@ -1,4 +1,4 @@
-{% extends "base.jinja2" %}
+{% extends "base.html" %}
 {% block title %}{{ front_matter.title }} | {{ site.title }}{% endblock %}
 {% block content %}
   {{ page.content | safe }}
