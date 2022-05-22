@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="p-0 m-0">
 <head>
   {%- block head %}
     <meta charset="UTF-8">
@@ -10,27 +10,21 @@
     <link rel="stylesheet" href="static/output.css">
   {%- endblock %}
 </head>
-<body>
-{%- block header %}
-  <h1 class="text-3xl font-bold underlined">Aris Chow</h1>
-  <div class="menu">
-    {%- block menu %}
-      <ul>
-        {% for m in menus %}
-        <li><a href="{{ m.link }}">{{ m.name }}</a></li>
-        {% endfor %}
-      </ul>
-    {%- endblock %}
-  </div>
-{%- endblock %}
-  <div id="content">
-    {%- block content %}
-    {% endblock -%}
-  </div>
-<div class="grid grid-cols-4 gap-4 bg-amber-200">
-  <div>01</div>
-  <div>02</div>
-  <div>09</div>
-</div>
+<body class="p-0 m-0 flex box-border h-screen p-4 flex-col font-sans">
+<main class="flex sm:flex-row flex-col page-content h-full text-center">
+  <nav class="flex-1 box-border content-navigation text-center p-4 bg-[#9BC850]">
+    <header class="box-border page-header text-center h-12 p-4 bg-[#A62E5C]">
+      <h1>Aris Chow</h1>
+    </header>
+  </nav>
+  <article class="box-border content-article text-center p-4 bg-[#675BA7] flex-[2_2_12em]">
+    <h1>Main Content</h1>
+  </article>
+</main>
+
+<footer class="box-border page-footer text-center p-4 bg-[#F15B2A]">
+  <h1>Footer</h1>
+</footer>
+
 </body>
 </html>
