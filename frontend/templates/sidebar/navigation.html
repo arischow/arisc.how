@@ -1,0 +1,19 @@
+{% macro menu(href, name) -%}
+  <li
+    class="p-1.5 font-sidebar tracking-wide uppercase text-[#aaa] no-underline w-full border-t border-solid border-[#282828]">
+    <a href="{{ href }}" class="transition-[color] duration-300 ease hover:text-amber-300">
+      {{ name }}
+    </a>
+  </li>
+{%- endmacro %}
+
+<div class="invisible md:visible">
+  <nav class="mx-0 flex flex-col box-border m-12">
+    <ul class="items-center justify-center border-b border-solid border-[#282828]">
+      {# TODO: has a configuration instead of modifying it in the template #}
+      {{ menu('/', 'home') }}
+      {{ menu('/about', 'about') }}
+      {{ menu('/contact', 'contact') }}
+    </ul>
+  </nav>
+</div>
