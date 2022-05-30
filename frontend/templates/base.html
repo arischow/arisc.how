@@ -31,8 +31,12 @@
         </p>
       </div>
     </header>
-    {% include "sidebar/navigation.html" %}
-    {% include "sidebar/social_links.html" %}
+    {% with menus=menus %}
+      {% include "sidebar/navigation.html" %}
+    {% endwith %}
+    {% with social_links=social_links %}
+      {% include "sidebar/social_links.html" %}
+    {% endwith %}
   </div>
   <div class="box-border flex-[2_2_12em]">
     <article class="box-border content-article text-center h-[95%] p-4 bg-[#675BA7]">

@@ -10,10 +10,9 @@
 <div class="invisible md:visible">
   <nav class="mx-0 flex flex-col box-border m-12">
     <ul class="items-center justify-center border-b border-solid border-[#282828]">
-      {# TODO: has a configuration instead of modifying it in the template #}
-      {{ menu('/', 'home') }}
-      {{ menu('/about', 'about') }}
-      {{ menu('/contact', 'contact') }}
+      {% for m in menus -%}
+        {{ menu(m.href, m.name) }}
+      {%- endfor %}
     </ul>
   </nav>
 </div>

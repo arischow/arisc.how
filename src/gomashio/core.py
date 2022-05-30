@@ -11,9 +11,9 @@ md = MarkdownIt()
 
 
 class Menu:
-    def __init__(self, name: str, link: str):
+    def __init__(self, href: str, name: str):
+        self.link = href
         self.name = name
-        self.link = link
 
 
 class Page:
@@ -22,14 +22,12 @@ class Page:
 
     def __init__(
         self,
-        env: "jinja2.Environment",
-        menus: list[Menu],
+        env: jinja2.Environment,
         content_filename=None,
         dest_filename=None,
     ):
         self._env = env
         self.dest_filename = dest_filename
-        self.menus = menus
         self.content_filename = content_filename
         with open(
             Path.joinpath(CONTENTS_DIR, self.MARKDOWN_DIR, self.content_filename), "r"
@@ -38,14 +36,13 @@ class Page:
             self.content = md.render(original_markdown)
 
     @classmethod
-    def glob(cls, env: "jinja2.Environment", menus: list[Menu]):
+    def glob(cls, env: jinja2.Environment):
         for filename in Path.joinpath(CONTENTS_DIR, cls.MARKDOWN_DIR).glob("*.md"):
-            yield cls(env, menus, content_filename=str(filename))
+            yield cls(env, content_filename=str(filename))
 
     @property
     def data(self):
         return {
-            "menus": self.menus,
             "page": {
                 "content": self.content,
             },
@@ -67,26 +64,32 @@ class Post(Page):
 
     def __init__(
         self,
-        env: "jinja2.Environment",
-        menus: list[Menu],
+        env: jinja2.Environment,
         content_filename=None,
         dest_filename=None,
     ):
-        super().__init__(env, menus, content_filename, dest_filename)
+        super().__init__(env, content_filename, dest_filename)
 
 
 class Site:
-    def __init__(self, title, pages: list["Page"] = None, posts: list["Post"] = None):
+    def __init__(
+        self, title, pages: list[Page] = None, posts: list[Post] = None, **kwargs
+    ):
         self.title = title
         self.pages = pages
         self.posts = posts
+        for k, v in kwargs.items():
+            setattr(self, k, v)
 
     @property
     def data(self):
         return {
             "site": {
                 "title": self.title,
-            }
+            },
+            # TODO: kwargs with fixed values from instance? code smell
+            "menus": self.menus,
+            "social_links": self.social_links,
         }
 
     def write(self):
