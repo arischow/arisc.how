@@ -86,6 +86,7 @@ class Site:
         return {
             "site": {
                 "title": self.title,
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a arcu dignissim, venenatis nibh ut, facilisis metus. Fusce non nibh.",
             },
             # TODO: kwargs with fixed values from instance? code smell
             "menus": self.menus,

@@ -26,7 +26,6 @@ def build():
         menus=menus,
         social_links=social_links,
     )
-    print(site.data)
     site.build()
 
 

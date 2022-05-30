@@ -6,7 +6,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %}Aris Chow{% endblock %}</title>
+    <title>{% block title %}{{ site.title }}{% endblock %}</title>
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i%7CKarla:400,400i,700,700i"
           rel="stylesheet">
     <link rel="stylesheet" href="static/output.css">
@@ -23,11 +23,9 @@
           alt="Aris Chow">
       </div>
       <div class="overflow-hidden md:items-center box-content">
-        <h1 class="py-2 text-white font-title text-2xl min-w-fit text-left md:text-center">Aris Chow</h1>
+        <h1 class="py-2 text-white font-title text-2xl min-w-fit text-left md:text-center">{{ site.title }}</h1>
         <p class="text-white text-left font-sidebar text-xs max-h-24">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus a arcu dignissim, venenatis nibh ut,
-          facilisis
-          metus. Fusce non nibh.
+          {{ site.description }}
         </p>
       </div>
     </header>
@@ -39,12 +37,10 @@
     {% endwith %}
   </div>
   <div class="box-border flex-[2_2_12em]">
-    <article class="box-border content-article text-center h-[95%] p-4 bg-[#675BA7]">
+    <article class="box-border text-center h-[92.5%] p-4">
       {% block content %}{% endblock %}
     </article>
-    <footer class="box-border text-center p-4 h-[5%] bg-[#F15B2A]">
-      <h1>Footer</h1>
-    </footer>
+    {% include "footer.html" %}
   </div>
 </main>
 
