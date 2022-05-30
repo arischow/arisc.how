@@ -12,7 +12,7 @@ md = MarkdownIt()
 
 class Menu:
     def __init__(self, href: str, name: str):
-        self.link = href
+        self.href = href
         self.name = name
 
 
