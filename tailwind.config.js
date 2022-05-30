@@ -4,7 +4,7 @@ module.exports = {
     extend: {},
     fontFamily: {
       'title': ['Crimson Text', 'serif'],
-      'intro': ['Karla', 'sans-serif'],
+      'sidebar': ['Karla', 'sans-serif'],
     }
   },
   plugins: [],
