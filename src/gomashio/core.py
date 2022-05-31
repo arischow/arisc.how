@@ -71,11 +71,32 @@ class Post(Page):
         super().__init__(env, content_filename, dest_filename)
 
 
+# TODO: Code smell... Index / Page / Post, there should be an inheritance hierarchy.
+class Index:
+    def __init__(self, env: jinja2.Environment, dest_filename="index.html"):
+        self._env = env
+        self.dest_filename = dest_filename
+
+    def render(self, dest_dir, data=None):
+        if not data:
+            data = {}
+
+        template = self._env.get_template("index.html")
+        dest_filename = self.dest_filename
+        Path.joinpath(dest_dir, dest_filename).write_text(template.render(data))
+
+
 class Site:
     def __init__(
-        self, title, pages: list[Page] = None, posts: list[Post] = None, **kwargs
+        self,
+        title,
+        index: Index,
+        pages: list[Page] = None,
+        posts: list[Post] = None,
+        **kwargs,
     ):
         self.title = title
+        self.index = index
         self.pages = pages
         self.posts = posts
         for k, v in kwargs.items():
@@ -96,6 +117,7 @@ class Site:
     def write(self):
         for p in [*self.pages, *self.posts]:
             p.render(DIST_DIR, {**self.data, **p.data})
+        self.index.render(DIST_DIR, {**self.data})
 
     @staticmethod
     def copy_static_files():

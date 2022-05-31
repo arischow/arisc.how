@@ -2,7 +2,7 @@
 import jinja2
 
 from .config import TEMPLATE_DIR
-from .core import Menu, Page, Post, Site
+from .core import Index, Menu, Page, Post, Site
 from .social_link import github, linkedin
 
 
@@ -19,8 +19,10 @@ def build():
     ]
     pages = Page.glob(env)
     posts = Post.glob(env)
+    index = Index(env)
     site = Site(
         title="Aris Chow",
+        index=index,
         pages=pages,
         posts=posts,
         menus=menus,
