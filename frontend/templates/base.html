@@ -41,8 +41,8 @@
       {% endwith %}
     </div>
   </div>
-  <div class="box-border flex-[2_2_12em]">
-    <main class="box-border px-[6vw] md:px-[6vw] py-[5vw] md:py-[2vw] overflow-auto">
+  <div class="box-border flex flex-col flex-[2_2_12em] px-[6vw] md:px-[6vw] lg:px-[12vw] py-[5vw] md:py-[2vw] lg:py-[4vw]">
+    <main class="grow box-border overflow-auto pb-[4vw]">
       {% block main %}{% endblock %}
     </main>
     {% include "footer.html" %}
