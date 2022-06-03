@@ -15,32 +15,34 @@
     <link rel="stylesheet" href="static/output.css?v=2341">
   {%- endblock %}
 </head>
-<body class="flex box-border h-screen flex-col font-sans">
-<div class="flex md:flex-row flex-col h-full text-center">
-  <div class="flex md:flex-1 flex-col h-[15%] md:h-screen box-border p-4 md:py-16 bg-[#1d1d1d] md:max-w-[18rem]">
-    <header class="flex md:flex-col items-center box-content p-0 md:p-4">
-      <div class="px-2 md:px-0">
-        <img
-          class="rounded-full max-w-[100px] max-h-[100px] h-[50px] w-[50px] md:h-[100px] md:w-[100px] border-2 border-solid border-amber-800"
-          src="https://avatars.githubusercontent.com/u/8206803?v=4"
-          alt="Aris Chow">
-      </div>
-      <div class="overflow-hidden md:items-center box-content">
-        <h1 class="py-2 text-white font-title text-2xl min-w-fit text-left md:text-center">{{ site.title }}</h1>
-        <p class="text-white text-left font-sidebar text-xs max-h-24">
-          {{ site.description }}
-        </p>
-      </div>
-    </header>
-    {% with menus=menus %}
-      {% include "sidebar/navigation.html" %}
-    {% endwith %}
-    {% with social_links=social_links %}
-      {% include "sidebar/social_links.html" %}
-    {% endwith %}
+<body class="flex box-border flex-col font-sans justify-between">
+<div class="flex md:flex-row flex-col">
+  <div class="md:flex-1 box-border px-4 md:pb-16 bg-[#1d1d1d] md:max-w-[18rem]">
+    <div class="sticky top-16 flex flex-col overflow-auto">
+      <header class="flex md:flex-col items-center box-content p-0 md:p-4">
+        <div class="px-2 md:px-0">
+          <img
+            class="rounded-full max-w-[100px] max-h-[100px] h-[50px] w-[50px] md:h-[100px] md:w-[100px] border-2 border-solid border-amber-800"
+            src="https://avatars.githubusercontent.com/u/8206803?v=4"
+            alt="Aris Chow">
+        </div>
+        <div class="overflow-hidden md:items-center box-content">
+          <h1 class="py-2 text-white font-title text-2xl min-w-fit text-left md:text-center">{{ site.title }}</h1>
+          <p class="text-white text-left font-sidebar text-xs max-h-24">
+            {{ site.description }}
+          </p>
+        </div>
+      </header>
+      {% with menus=menus %}
+        {% include "sidebar/navigation.html" %}
+      {% endwith %}
+      {% with social_links=social_links %}
+        {% include "sidebar/social_links.html" %}
+      {% endwith %}
+    </div>
   </div>
   <div class="box-border flex-[2_2_12em]">
-    <main class="box-border h-[92.5%] px-[3vw] py-[2vw]">
+    <main class="box-border px-[6vw] md:px-[6vw] py-[5vw] md:py-[2vw] overflow-auto">
       {% block main %}{% endblock %}
     </main>
     {% include "footer.html" %}
