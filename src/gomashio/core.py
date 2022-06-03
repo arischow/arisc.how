@@ -4,6 +4,7 @@ from pathlib import Path
 import frontmatter
 import jinja2
 from markdown_it import MarkdownIt
+from slugify import slugify
 
 from .config import CONTENTS_DIR, DIST_DIR, FRONTEND_DIR
 
@@ -35,6 +36,17 @@ class Page:
             self.front_matter, original_markdown = frontmatter.parse(f.read())
             self.content = md.render(original_markdown)
 
+    def __str__(self):
+        return f"<{self.__class__.__name__}: {self.filename}>"
+
+    @property
+    def filename(self):
+        return (
+            self.dest_filename
+            or f'{slugify(self.front_matter.get("slug", ""))}.html'
+            or f"{Path(self.content_filename).stem}.html"
+        )
+
     @classmethod
     def glob(cls, env: jinja2.Environment):
         for filename in Path.joinpath(CONTENTS_DIR, cls.MARKDOWN_DIR).glob("*.md"):
@@ -54,7 +66,7 @@ class Page:
             data = self.data
 
         template = self._env.get_template(self.TEMPLATE_FILENAME)
-        dest_filename = self.dest_filename or f"{Path(self.content_filename).stem}.html"
+        dest_filename = self.filename
         Path.joinpath(dest_dir, dest_filename).write_text(template.render(data))
 
 
@@ -115,9 +127,10 @@ class Site:
         }
 
     def write(self):
-        for p in [*self.pages, *self.posts]:
+        posts = [p for p in self.posts]
+        for p in [*self.pages, *posts]:
             p.render(DIST_DIR, {**self.data, **p.data})
-        self.index.render(DIST_DIR, {**self.data})
+        self.index.render(DIST_DIR, {**self.data, "posts": posts})
 
     @staticmethod
     def copy_static_files():

@@ -1,7 +1,20 @@
 {% extends "base.html" %}
 {% block main -%}
   <div
-    class="uppercase font-sidebar tracking-widest text-sm text-left after:bg-amber-500 after:block after:content-[''] after:h-[1px] after:w-[60px] after:mt-4">
+    class="uppercase font-sidebar tracking-widest text-sm text-left after:bg-amber-500 after:block after:content-[''] after:h-[1px] after:w-[60px] after:mt-4 after:mb-[2.14285em]">
     Latest Posts
+  </div>
+  <div class="flex flex-col">
+    {% for post in posts -%}
+      <div class="my-2 flex-1 flex items-center">
+        <div class="mr-8 flex-initial w-fit font-sidebar">
+          <time
+            datetime="{{ post.front_matter.created_at }}">{{ post.front_matter.created_at.strftime('%Y-%m-%d') }}</time>
+        </div>
+        <h2 class="flex-1 text-2xl tracking-wide text-black font-title">
+          <a class href="{{ post.front_matter.slug }}">{{ post.front_matter.title }}</a>
+        </h2>
+      </div>
+    {%- endfor %}
   </div>
 {%- endblock %}

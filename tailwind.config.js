@@ -7,5 +7,7 @@ module.exports = {
       'sidebar': ['Karla', 'sans-serif'],
     }
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }
