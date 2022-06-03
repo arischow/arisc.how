@@ -8,7 +8,7 @@
   </a>
 {%- endmacro %}
 
-<div class="mx-8 flex flex-row box-border my-4 justify-center text-[#666] invisible md:visible">
+<div class="flex-1 md:flex-auto basis-0 w-0 md:w-auto md:basis-auto mx-8 flex flex-row box-border my-4 justify-center text-[#666] hidden md:block">
   {% for sl in social_links -%}
     {{ icon(sl.name, sl.url, sl.view_box, sl.svg_data) }}
   {%- endfor %}
