@@ -1,5 +1,7 @@
 {% extends "base.html" %}
-{% block title %}{{ front_matter.title }} | {{ site.title }}{% endblock %}
-{% block content %}
-  {{ page.content | safe }}
+{% from "macros/article.html" import article %}
+
+{% block title %}{{ front_matter.title }}{% endblock %}
+{% block main %}
+  {{ article(page, front_matter, display_date=False) }}
 {% endblock %}
