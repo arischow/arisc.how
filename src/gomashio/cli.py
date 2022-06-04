@@ -4,7 +4,7 @@ import jinja2
 from .config import TEMPLATE_DIR
 from .core import Index, Menu, Page, Post, Site
 from .jinja2_filters import FILTERS
-from .social_link import github, linkedin
+from .social_link import SOCIAL_LINKS
 
 
 def build():
@@ -15,10 +15,6 @@ def build():
 
     menus = [Menu("/", "home"), Menu("/about", "about"), Menu("/contact", "contact")]
 
-    social_links = [
-        github,
-        linkedin,
-    ]
     pages = Page.glob(env)
     posts = Post.glob(env)
     index = Index(env)
@@ -28,7 +24,7 @@ def build():
         pages=pages,
         posts=posts,
         menus=menus,
-        social_links=social_links,
+        social_links=SOCIAL_LINKS,
     )
     site.build()
 
