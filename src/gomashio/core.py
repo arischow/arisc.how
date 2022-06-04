@@ -43,9 +43,9 @@ class Page:
     def filename(self):
         return (
             self.dest_filename
-            or f'{slugify(self.front_matter.get("slug", ""))}.html'
-            or f"{Path(self.content_filename).stem}.html"
-        )
+            or f'{slugify(self.front_matter.get("slug", ""))}'
+            or f"{Path(self.content_filename).stem}"
+        ) + ".html"
 
     @classmethod
     def glob(cls, env: jinja2.Environment):
