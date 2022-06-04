@@ -1,0 +1,15 @@
+{% macro icon(name, href, viewBox, svg_data) -%}
+  <a class="px-2 hover:text-amber-300" href="{{ href }}" target="_blank" rel="noopener"
+     aria-label="{{ name }}">
+    <svg class="fill-current h-[18px]" xmlns="http://www.w3.org/2000/svg" viewBox="{{ viewBox }}">
+      <path
+        d="{{ svg_data }}"></path>
+    </svg>
+  </a>
+{%- endmacro %}
+
+<div class="mx-8 box-border my-4 justify-center text-[#666] hidden md:flex md:flex-row md:flex-1">
+  {% for sl in social_links -%}
+    {{ icon(sl.name, sl.url, sl.view_box, sl.svg_data) }}
+  {%- endfor %}
+</div>

@@ -9,6 +9,7 @@ python = "^3.10"
 Jinja2 = "^3.1.2"
 markdown-it-py = {extras = ["plugins"], version = "^2.1.0"}
 python-frontmatter = "^1.0.0"
+python-slugify = "^6.1.2"
 
 [tool.poetry.dev-dependencies]
 
@@ -21,4 +22,4 @@ profile = "black"
 src_paths = ["src/gomashio"]
 
 [tool.poetry.scripts]
-site_build = "gomashio.cli:build"
+build = "gomashio.cli:build"

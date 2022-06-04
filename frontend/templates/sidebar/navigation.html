@@ -1,0 +1,18 @@
+{% macro menu(href, name) -%}
+  <li
+    class="py-1.5 text-md font-sidebar tracking-wide uppercase text-[#aaa] no-underline border-t border-solid border-[#282828]">
+    <a href="{{ href }}" class="transition-[color] duration-300 ease hover:text-amber-300">
+      {{ name }}
+    </a>
+  </li>
+{%- endmacro %}
+
+<div class="hidden md:block">
+  <nav class="mx-0 flex flex-col box-border m-12 text-center">
+    <ul class="mx-6 flex-1 items-center justify-center border-b border-solid border-[#282828]">
+      {% for m in menus -%}
+        {{ menu(m.href, m.name) }}
+      {%- endfor %}
+    </ul>
+  </nav>
+</div>
