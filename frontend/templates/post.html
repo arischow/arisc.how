@@ -1,8 +1,9 @@
-{% extends "page.html" %}
+{% extends "base.html" %}
+{% block title %}{{ front_matter.title }}{% endblock %}
 {% block main %}
   <article class="prose">
     <div class="mb-[1vw] text-4xl tracking-wide text-black font-title">
-      <a class="no-underline" href="{{ front_matter.slug }}">{{ front_matter.title }}</a>
+      {{ front_matter.title }}
     </div>
     <div class="font-sidebar mb-[.75em]">
       <time datetime="{{ front_matter.created_at }}">{{ front_matter.created_at.strftime('%Y-%m-%d') }}</time>

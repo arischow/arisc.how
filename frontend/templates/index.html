@@ -12,7 +12,7 @@
             datetime="{{ post.front_matter.created_at }}">{{ post.front_matter.created_at.strftime('%Y-%m-%d') }}</time>
         </div>
         <h2 class="flex-1 text-2xl tracking-wide text-black font-title">
-          <a class href="{{ post.front_matter.slug }}">{{ post.front_matter.title }}</a>
+          <a class="hover:underline" href="{{ post.front_matter.slug }}">{{ post.front_matter.title }}</a>
         </h2>
       </div>
     {%- endfor %}

@@ -119,7 +119,7 @@ class Site:
         return {
             "site": {
                 "title": self.title,
-                "description": "Focusing with my kitten Loki.",
+                "description": "Someone who owns yet another blog.",
             },
             # TODO: kwargs with fixed values from instance? code smell
             "menus": self.menus,
