@@ -3,6 +3,7 @@ import jinja2
 
 from .config import TEMPLATE_DIR
 from .core import Index, Menu, Page, Post, Site
+from .jinja2_filters import FILTERS
 from .social_link import github, linkedin
 
 
@@ -10,6 +11,7 @@ def build():
     env = jinja2.Environment(
         loader=jinja2.FileSystemLoader(TEMPLATE_DIR), autoescape=True
     )
+    env.filters.update(**FILTERS)
 
     menus = [Menu("/", "home"), Menu("/about", "about"), Menu("/contact", "contact")]
 

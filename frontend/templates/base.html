@@ -10,7 +10,7 @@
     <meta name="og:url" content="https://arisc.how">
     <meta name="og:type" content="blog">
     <title>{% block title %}{{ site.title }}{% endblock %}</title>
-    <link rel="stylesheet" href="static/output.css?v=2341">
+    <link rel="stylesheet" href="{{ "static/output.css" | bust_cache }}">
     <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i%7CKarla:400,400i,700,700i"
           rel="stylesheet">
   {%- endblock %}
