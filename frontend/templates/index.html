@@ -9,7 +9,7 @@
       <div class="my-2 flex-1 flex items-center">
         <div class="mr-8 flex-initial w-fit font-sidebar">
           <time
-            datetime="{{ post.front_matter.created_at }}">{{ post.front_matter.created_at.strftime('%Y-%m-%d') }}</time>
+            datetime="{{ post.front_matter.created_at }}">{{ post.front_matter.created_at.strftime('%b %-d, %Y') }}</time>
         </div>
         <h2 class="flex-1 text-2xl tracking-wide text-black font-title">
           <a class="hover:underline" href="{{ post.front_matter.slug }}">{{ post.front_matter.title }}</a>

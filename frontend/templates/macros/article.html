@@ -5,7 +5,7 @@
     </div>
     {% if display_date -%}
       <div class="font-sidebar mb-[.75em]">
-        <time datetime="{{ front_matter.created_at }}">{{ front_matter.created_at.strftime('%Y-%m-%d') }}</time>
+        <time datetime="{{ front_matter.created_at }}">{{ front_matter.created_at.strftime('%b %-d, %Y') }}</time>
       </div>
     {%- endif %}
     {{ page.content | safe }}
