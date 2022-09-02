@@ -21,6 +21,18 @@ jobs:
       - run: poetry install
       - run: npm ci
       - run: make build
+      - uses: actions/upload-artifact@v3
+        with:
+          name: site-data
+          path: ./dist
+  deploy:
+    runs-on: ubuntu-22.04
+    environment: live
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: site-data
+          path: ./
       - uses: appleboy/scp-action@master
         with:
           host: ${{ secrets.SERVER_HOST }}
