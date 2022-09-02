@@ -1,4 +1,4 @@
-name: Build
+name: Publish
 on:
   pull_request:
   push:
@@ -26,6 +26,7 @@ jobs:
           name: site-data
           path: ./dist
   deploy:
+    needs: build
     runs-on: ubuntu-22.04
     environment: live
     steps:
