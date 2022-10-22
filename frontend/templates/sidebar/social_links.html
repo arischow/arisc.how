@@ -1,7 +1,7 @@
-{% macro icon(name, href, viewBox, svg_data, pixel=18) -%}
+{% macro icon(name, href, viewBox, svg_data, custom_class="h-[18px]") -%}
   <a class="px-2 hover:text-amber-300" href="{{ href }}" target="_blank" rel="noopener"
      aria-label="{{ name }}">
-    <svg class="fill-current h-[{{ pixel }}px]" xmlns="http://www.w3.org/2000/svg" viewBox="{{ viewBox }}">
+    <svg class="fill-current {{ custom_class }}" xmlns="http://www.w3.org/2000/svg" viewBox="{{ viewBox }}">
       <path
         d="{{ svg_data }}"></path>
     </svg>

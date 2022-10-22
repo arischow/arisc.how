@@ -45,7 +45,7 @@ class Page:
             self.dest_filename
             or f'{slugify(self.front_matter.get("slug", ""))}'
             or f"{Path(self.content_filename).stem}"
-        ) + ".html"
+        )
 
     @classmethod
     def glob(cls, env: jinja2.Environment):
@@ -67,7 +67,10 @@ class Page:
 
         template = self._env.get_template(self.TEMPLATE_FILENAME)
         dest_filename = self.filename
-        Path.joinpath(dest_dir, dest_filename).write_text(template.render(data))
+        Path.joinpath(dest_dir, dest_filename).mkdir(parents=True, exist_ok=True)
+        Path.joinpath(dest_dir, dest_filename, "index.html").write_text(
+            template.render(data)
+        )
 
 
 class Post(Page):
@@ -81,6 +84,14 @@ class Post(Page):
         dest_filename=None,
     ):
         super().__init__(env, content_filename, dest_filename)
+
+    def render(self, dest_dir, data=None):
+        template = self._env.get_template(self.TEMPLATE_FILENAME)
+        dest_filename = self.filename
+        Path.joinpath(dest_dir, dest_filename).mkdir(parents=True, exist_ok=True)
+        Path.joinpath(dest_dir, dest_filename, "index.html").write_text(
+            template.render(data)
+        )
 
 
 # TODO: Code smell... Index / Page / Post, there should be an inheritance hierarchy.
