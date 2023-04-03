@@ -2,24 +2,17 @@
 name = "gomashio"
 version = "0.1.0"
 description = ""
-authors = ["Aris Chow <arischow@gmail.com>"]
+authors = ["Aris Chow <hello@arisc.how>"]
+readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.10"
-Jinja2 = "^3.1.2"
-markdown-it-py = {extras = ["plugins"], version = "^2.1.0"}
-python-frontmatter = "^1.0.0"
-python-slugify = "^6.1.2"
+python = "^3.11"
+django = "^4.2"
 
-[tool.poetry.dev-dependencies]
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.2.1"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.isort]
-profile = "black"
-src_paths = ["src/gomashio"]
-
-[tool.poetry.scripts]
-build = "gomashio.cli:build"
