@@ -13,7 +13,7 @@ def build():
     )
     env.filters.update(**FILTERS)
 
-    menus = [Menu("/", "home"), Menu("/about", "about"), Menu("/contact", "contact")]
+    menus = [Menu("/", "home"), Menu("/about", "about")]
 
     pages = Page.glob(env)
     posts = Post.glob(env)
