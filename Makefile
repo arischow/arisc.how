@@ -1,4 +1,4 @@
-build: build/py build/js
+build: build/js build/py
 
 build/py:
 	poetry run build
