@@ -17,6 +17,7 @@ def build():
 
     pages = Page.glob(env)
     posts = Post.glob(env)
+    posts.sort(key=lambda p: p.front_matter["created_at"], reverse=True)
     index = Index(env)
     site = Site(
         title="Aris Chow",
