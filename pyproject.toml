@@ -11,8 +11,6 @@ markdown-it-py = {extras = ["plugins"], version = "^2.1.0"}
 python-frontmatter = "^1.0.0"
 python-slugify = "^6.1.2"
 
-[tool.poetry.dev-dependencies]
-
 [tool.poetry.group.dev.dependencies]
 pywatchman = "^1.4.1"
 pre-commit = "^3.5.0"
