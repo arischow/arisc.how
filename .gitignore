@@ -1,4 +1,6 @@
 .idea/
 .python-version
+.wrangler/
+__pycache__/
 dist/**
 node_modules/
