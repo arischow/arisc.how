@@ -6,17 +6,17 @@ slug: /gaming-pc-build-2025
 
 After four years, I have finally built a new PC.
 
-| Component     | Name                                                         |
-| ------------- | ------------------------------------------------------------ |
-| Motherboard   | MSI MPG X670E CARBON WIFI                                    |
-| CPU           | AMD Ryzen 7 9800X3D                                          |
-| CPU Cooler    | ARCTIC Liquid Freezer III 360                                |
-| Graphics Card | Colorful iGame RTX 4080 SUPER Advanced OC 16GB               |
-| RAM           | Predator Hera DDR5 6400 32GB * 2                             |
+| Component     | Name                                                           |
+|---------------|----------------------------------------------------------------|
+| Motherboard   | MSI MPG X670E CARBON WIFI                                      |
+| CPU           | AMD Ryzen 7 9800X3D                                            |
+| CPU Cooler    | ARCTIC Liquid Freezer III 360                                  |
+| Graphics Card | Colorful iGame RTX 4080 SUPER Advanced OC 16GB                 |
+| RAM           | Predator Hera DDR5 6400 32GB * 2                               |
 | Hard Drives   | Samsung 990 PRO 2TB / Samsung 980 PRO 1TB / WD Black SN750 1TB |
-| PSU           | Super Flower Leadex VII XG 1300W                             |
-| Case          | Fractal Design North XL White TG                             |
-| Rear fan      | Thermalright TL-B14B EXTREM (Black)                          |
+| PSU           | Super Flower Leadex VII XG 1300W                               |
+| Case          | Fractal Design North XL White TG                               |
+| Rear fan      | Thermalright TL-B14B EXTREM (Black)                            |
 
 I'm keeping my old graphics card and SSDs until I can afford the RTX 5090, which is now sky-high in price. 🙂
 
@@ -28,7 +28,15 @@ I have been playing World of Warcraft again for several months now, and my previ
 
 And since I am a pro-4K guy, I would like to get the latest RTX 5090 so that I can have a better experience.
 
-> I'm really not into cable management — it just doesn't feel right to me. 😅
+<div class="flex items-center p-4 mb-4 text-sm text-blue-800 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400" role="alert">
+  <svg class="shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+  </svg>
+  <span class="sr-only">Info</span>
+  <div>
+    <span class="font-medium">I'm really not into cable management - it just doesn't feel right to me. 😅</span>
+  </div>
+</div>
 
 ## Consideration
 
@@ -59,7 +67,7 @@ Just enable the PBO settings. Bang!
 ![image-20250203160621198](https://cdn.sa.net/2025/02/03/5oLRm4Kn8ZdGtkz.png)
 
 > [!NOTE]
-> 
+>
 >Just enable EXPO or XMP if you think this doesn't make sense to you.
 
 There are lots of posts and screenshots of settings to guide you how to tweak your RAM. Overclocking 32GB x2 is a bit more physically challenging than 16GB x2, so make sure to double-check whether the post you're viewing fits your case. If you decide to buy the same RAM as I did, the screenshot above might provide some helpful clues.
@@ -80,7 +88,7 @@ There are lots of posts and screenshots of settings to guide you how to tweak yo
 
 - The Hydro PTM Pro 1350W, for which I have already requested a refund, produces a horrible "tada-tada" sound when the CPU and GPU are under moderate load:
   <iframe class="aspect-video w-full" height="300" src="https://www.youtube.com/embed/9B8Pv2efoug?si=CkDImFgoIAlhaGbi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  
+
   Before requesting a refund, I contacted their technical support and they told me that this is normal - it's the sound produced when the PC reaches the critical point between low and medium load.
 
   At first, I thought this was an acceptable answer since it's completely reproducible by controlling the maximum FPS in the game settings. However, I think this will become extremely annoying if I have to configure every game's settings.
