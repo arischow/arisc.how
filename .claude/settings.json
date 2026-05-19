@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(make dev)",
+      "Bash(make build)",
+      "Bash(make watch)",
+      "Bash(poetry install)",
+      "Bash(npm install)",
+      "Bash(npx tailwindcss*)",
+      "Bash(npx wrangler*)",
+      "Bash(poetry run build)"
+    ]
+  }
+}
