@@ -66,9 +66,9 @@ Just enable the PBO settings. Bang!
 
 ![image-20250203160621198](https://cdn.sa.net/2025/02/03/5oLRm4Kn8ZdGtkz.png)
 
-> [!NOTE]
->
->Just enable EXPO or XMP if you think this doesn't make sense to you.
+<div class="not-prose rounded-lg border-l-4 border-blue-500 bg-blue-50 p-4 text-sm">
+Just enable EXPO or XMP if you think this doesn't make sense to you.
+</div>
 
 There are lots of posts and screenshots of settings to guide you how to tweak your RAM. Overclocking 32GB x2 is a bit more physically challenging than 16GB x2, so make sure to double-check whether the post you're viewing fits your case. If you decide to buy the same RAM as I did, the screenshot above might provide some helpful clues.
 
