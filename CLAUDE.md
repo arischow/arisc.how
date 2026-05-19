@@ -5,8 +5,8 @@ Custom static site generator for https://arisc.how. Python + Jinja2 + Tailwind C
 ## Development
 
 ```sh
-poetry install && npm install   # first time / fresh worktree setup
-make dev                        # build + serve at localhost:8788 + auto-rebuild on file changes
+poetry install   # first time / fresh worktree setup (npm install is automatic via make)
+make dev         # build + serve at localhost:8788 + auto-rebuild on file changes
 ```
 
 ## Build
@@ -17,9 +17,7 @@ make dev                        # build + serve at localhost:8788 + auto-rebuild
 
 All paths in the Makefile, Python config, wrangler.toml, and tailwind.config.js are relative. `make dev` works from any worktree root -- never hardcode absolute paths.
 
-A fresh worktree needs setup before the first build:
-1. `npm install` -- node_modules/ is gitignored
-2. `poetry install` -- Poetry creates a separate venv per directory
+A fresh worktree needs `poetry install` before the first build (Poetry creates a separate venv per directory). `make dev` and `make build` auto-run `npm install` when `node_modules/` is missing or `package.json` has changed.
 
 ## Code style
 
