@@ -8,7 +8,7 @@
   </a>
 {%- endmacro %}
 
-<div class="mx-8 box-border my-4 justify-center text-[#666] hidden md:flex md:flex-row md:flex-1">
+<div class="mx-8 box-border my-4 justify-center text-[#666] flex flex-row flex-1">
   {% for sl in social_links -%}
     {{ icon(sl.name, sl.url, sl.view_box, sl.svg_data) }}
   {%- endfor %}
