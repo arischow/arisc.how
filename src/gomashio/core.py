@@ -9,7 +9,7 @@ from slugify import slugify
 from .config import CONTENTS_DIR, DIST_DIR, FRONTEND_DIR
 from .social_link import SocialLink
 
-md = MarkdownIt()
+md = MarkdownIt().enable("table")
 
 
 class Menu:
