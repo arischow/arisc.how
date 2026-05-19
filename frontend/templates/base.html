@@ -6,9 +6,24 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="og:title" content="Aris Chow">
-    <meta name="og:url" content="https://arisc.how">
-    <meta name="og:type" content="blog">
+    {% if front_matter -%}
+      {% set page_title = front_matter.title %}
+      {% set page_description = front_matter.description %}
+      {% set page_url = front_matter.canonical_url %}
+      {% set page_og_type = front_matter.og_type %}
+    {%- else -%}
+      {% set page_title = site.title %}
+      {% set page_description = site.description %}
+      {% set page_url = site.url + "/" %}
+      {% set page_og_type = "website" %}
+    {%- endif %}
+    <meta name="description" content="{{ page_description }}">
+    <link rel="canonical" href="{{ page_url }}">
+    <meta property="og:title" content="{{ page_title }}">
+    <meta property="og:description" content="{{ page_description }}">
+    <meta property="og:url" content="{{ page_url }}">
+    <meta property="og:type" content="{{ page_og_type }}">
+    <meta property="og:site_name" content="{{ site.title }}">
     <title>{% block title %}{{ site.title }}{% endblock %}</title>
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <link rel="stylesheet" href="{{ "/static/output.css" | bust_cache }}">
