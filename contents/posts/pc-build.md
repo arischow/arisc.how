@@ -14,7 +14,7 @@ After four years, I have finally built a new PC.
 | Graphics Card | Colorful iGame RTX 4080 SUPER Advanced OC 16GB                 |
 | RAM           | Predator Hera DDR5 6400 32GB * 2                               |
 | Hard Drives   | Samsung 990 PRO 2TB / Samsung 980 PRO 1TB / WD Black SN750 1TB |
-| PSU           | Super Flower Leadex VII XG 1300W                               |
+| PSU           | Seasonic Prime TX-1600                                         |
 | Case          | Fractal Design North XL White TG                               |
 | Rear fan      | Thermalright TL-B14B EXTREM (Black)                            |
 
