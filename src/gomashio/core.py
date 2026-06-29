@@ -172,6 +172,10 @@ class Site:
                 "title": self.title,
                 "description": "Someone who owns yet another blog.",
                 "url": SITE_URL,
+                "image": (
+                    "https://en.gravatar.com/userimage/107347778/"
+                    "262e4cf9b534c3017d7faa0538120fa3.jpg?size=400"
+                ),
             },
             "menus": self.menus,
             "social_links": self.social_links,
